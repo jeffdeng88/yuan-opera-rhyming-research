@@ -1,1 +1,15 @@
 TODO
+<script>
+
+$(document).ready(() => {
+$.getJSON('yuanqu.json')
+	.then(data => {
+		let array = data.data.posts.edges;
+		let output = ''
+		array.forEach(i => {
+			output += `<h1>${i.node.title}</h1>`
+		});
+		$(document.body).append(`<div>${output}</div>`)
+	})
+})
+</script>
