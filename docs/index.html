@@ -20,6 +20,8 @@ $.getJSON('yuanqu.json')
 		let array = data.title;
 		let output = ''
 		array.forEach(i => {
+			console("output: " + output);
+			
 			output += `<h1>${i.node.title}</h1>`
 		});
 		$(document.body).append(`<div>${output}</div>`)
